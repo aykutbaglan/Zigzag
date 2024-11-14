@@ -1,31 +1,20 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class GroundPositionController : MonoBehaviour
 {
-    private GroundSpawnController groundSpawnController;
-
-    private Rigidbody rb;
-
     [SerializeField] private float endYValue;
-
+    private GroundSpawnController groundSpawnController;
+    private Rigidbody rb;
     private int groundDirection;
-
 
     void Start()
     {
         groundSpawnController = FindObjectOfType<GroundSpawnController>();
         rb = GetComponent<Rigidbody>();
     }
-
-    // Update is called once per frame
     void Update()
     {
         CheckGroundVerticalPosition();
-
-        
-
     }
 
     private void CheckGroundVerticalPosition()
@@ -34,15 +23,11 @@ public class GroundPositionController : MonoBehaviour
         {
             SetRigidBodyValues();
             SetGroundNewPosition();
-
         }
     }
-
-
     private void SetGroundNewPosition()
     {
         groundDirection = Random.Range(0, 2);
-
 
         if (groundDirection == 0)
         {
@@ -52,12 +37,8 @@ public class GroundPositionController : MonoBehaviour
         {
             transform.position = new Vector3(groundSpawnController.lastGroundObject.transform.position.x, groundSpawnController.lastGroundObject.transform.position.y, groundSpawnController.lastGroundObject.transform.position.z + 1f);
         }
-
-
         groundSpawnController.lastGroundObject = gameObject;
     }
-
-
     private void SetRigidBodyValues()
     {
         rb.isKinematic = true;

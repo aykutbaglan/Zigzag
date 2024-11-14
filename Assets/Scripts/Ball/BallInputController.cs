@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class BallInputController : MonoBehaviour
@@ -9,13 +7,10 @@ public class BallInputController : MonoBehaviour
     {
         ballDirection = Vector3.left;
     }
-
-    
     void Update()
     {
         HandleBallInputs();
     }
-
     private void HandleBallInputs()
     {
         if (Input.GetMouseButtonDown(0))
@@ -23,19 +18,15 @@ public class BallInputController : MonoBehaviour
             ChangeBallDirection();
         }
     }
-
-        private void ChangeBallDirection()
-        {
-            if (ballDirection.x == -1)
-            {
-                ballDirection = Vector3.forward;
-            }
-            else
-            {
-                ballDirection = Vector3.left;
-            }
-        }
-        
+    private void ChangeBallDirection()
+    {
+       if (ballDirection.x == -1)
+       {
+           ballDirection = Vector3.forward;
+       }
+       else
+       {
+           ballDirection = Vector3.left;
+       }
     }
-
-
+}
