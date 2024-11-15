@@ -6,8 +6,18 @@ using UnityEngine.UI;
 
 public class EndGameState : State
 {
+    public float fallLimit = -3f;
     [SerializeField] private Button restartButton;
+    [SerializeField] private Transform ballTransform;
+    [SerializeField] private StateMachine stateMachine;
 
+    private void Update()
+    {
+        if (ballTransform.position.y < fallLimit)
+        {
+            GameOver();
+        }
+    }
     private void OnEnable()
     {
         restartButton.onClick.AddListener(RestartButtonOnClick);
@@ -23,6 +33,11 @@ public class EndGameState : State
     public override void OnExit()
     {
         base.OnExit();
+    }
+    public void GameOver()
+    {
+        stateMachine.TransitionToNextState();
+        GameManager.GamePause();
     }
     public void RestartButtonOnClick()
     {

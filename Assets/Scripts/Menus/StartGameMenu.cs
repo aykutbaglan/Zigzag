@@ -5,7 +5,6 @@ public class StartGameMenu : State
 {
     private void Start()
     {
-        Time.timeScale = 0f;
     }
     public override void OnEnter()
     {

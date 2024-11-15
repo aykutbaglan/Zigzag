@@ -17,4 +17,9 @@ public class GameManager : MonoBehaviour
     {
         Time.timeScale = 0f;
     }
+
+    private void Update()
+    {
+        // Debug.Log($"Time Scale - {Time.timeScale}");
+    }
 }

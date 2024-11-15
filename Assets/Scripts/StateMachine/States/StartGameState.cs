@@ -20,13 +20,13 @@ public class StartGameState : State
     public override void OnEnter()
     {
         base.OnEnter();
-        if (PlayerPrefs.GetInt("isGameRestarted",0) == 1)
-        {
-            GameManager.GameResume();
-            stateMachine.TransitionToSpesificState(IN_GAME_STATE_INDEX);
-            return;
-        }
-        GameManager.GamePause();
+        //if (PlayerPrefs.GetInt("isGameRestarted",0) == 1)
+        //{
+        //    GameManager.GameResume();
+        //    stateMachine.TransitionToSpesificState(IN_GAME_STATE_INDEX);
+        //    return;
+        //}
+        //GameManager.GamePause();
     }
     public override void OnExit()
     {

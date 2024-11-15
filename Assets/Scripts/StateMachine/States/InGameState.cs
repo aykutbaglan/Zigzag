@@ -4,9 +4,20 @@ using UnityEngine;
 
 public class InGameState : State
 {
+
+    [SerializeField] private BallMovementController _moveController;
     public void StartGame()
     {
-        GameManager.GameResume();
         base.OnEnter();
+    }
+
+    public override void OnEnter()
+    {
+        Debug.Log("On Enter In Game");
+            base.OnEnter();
+        GameManager.GameResume();
+
+        _moveController.ChangeGameStatus(true);
+
     }
 }

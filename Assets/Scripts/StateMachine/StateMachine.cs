@@ -8,18 +8,16 @@ public class StateMachine : MonoBehaviour
 
     private void Start()
     {
-        if (!PlayerPrefs.HasKey("isGameRestarted"))
-        {
-            PlayerPrefs.SetInt("isGameRestarted", 0);
-            PlayerPrefs.Save();
-        }
-        if (PlayerPrefs.GetInt("isGameRestarted",1) == 0)
+
+        Debug.Log(PlayerPrefs.GetInt("isGameRestarted") + "aaaaaaaaaaaaaa");
+        if (PlayerPrefs.GetInt("isGameRestarted") == 0)
         {
             TransitionToNextState();
         }
         else
         {
-            TransitionToSpesificState(0);
+            PlayerPrefs.SetInt("isGameRestarted", 0);
+            TransitionToSpesificState(1);
         }
     }
     public void ChangeState(State newState)
@@ -30,6 +28,7 @@ public class StateMachine : MonoBehaviour
         }
         currentState = newState;
         currentState.OnEnter();
+        Debug.Log(currentState.name);
     }
     public void TransitionToNextState()
     {

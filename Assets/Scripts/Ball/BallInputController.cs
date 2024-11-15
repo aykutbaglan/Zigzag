@@ -3,9 +3,20 @@ using UnityEngine;
 public class BallInputController : MonoBehaviour
 {
     [HideInInspector] public Vector3 ballDirection;
+    private bool isGoingForward = false;
     void Start()
     {
-        ballDirection = Vector3.left;
+        
+        if (Random.Range(0, 2) == 0)
+        {
+            ballDirection = Vector3.forward;
+            isGoingForward = true;
+        }
+        else
+        {
+            ballDirection = Vector3.left;
+            isGoingForward = false;
+        }
     }
     void Update()
     {
@@ -20,13 +31,15 @@ public class BallInputController : MonoBehaviour
     }
     private void ChangeBallDirection()
     {
-       if (ballDirection.x == -1)
+       if (!isGoingForward)
        {
            ballDirection = Vector3.forward;
+            isGoingForward = true;
        }
        else
        {
            ballDirection = Vector3.left;
+            isGoingForward = false;
        }
     }
 }
