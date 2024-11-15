@@ -1,18 +1,34 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
-public class EndGameState : MonoBehaviour
+public class EndGameState : State
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    [SerializeField] private Button restartButton;
 
-    // Update is called once per frame
-    void Update()
+    private void OnEnable()
     {
-        
+        restartButton.onClick.AddListener(RestartButtonOnClick);
+    }
+    private void OnDisable()
+    {
+        restartButton.onClick.RemoveListener(RestartButtonOnClick);
+    }
+    public override void OnEnter()
+    {
+        base.OnEnter();
+    }
+    public override void OnExit()
+    {
+        base.OnExit();
+    }
+    public void RestartButtonOnClick()
+    {
+        PlayerPrefs.SetInt("isGameRestarted", 1);
+        PlayerPrefs.Save();
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        GameManager.GameResume();
     }
 }

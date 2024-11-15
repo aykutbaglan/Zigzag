@@ -1,18 +1,43 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
-public class StartGameState : MonoBehaviour
+public class StartGameState : State
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    [SerializeField] private Button startButton;
+    [SerializeField] private StateMachine stateMachine;
+    private const int IN_GAME_STATE_INDEX = 1;
 
-    // Update is called once per frame
-    void Update()
+    private void OnEnable()
     {
-        
+        startButton.onClick.AddListener(StartButtonOnClick);
+    }
+    private void OnDisable()
+    {
+        startButton.onClick.RemoveListener(StartButtonOnClick);
+    }
+    public override void OnEnter()
+    {
+        base.OnEnter();
+        if (PlayerPrefs.GetInt("isGameRestarted",0) == 1)
+        {
+            GameManager.GameResume();
+            stateMachine.TransitionToSpesificState(IN_GAME_STATE_INDEX);
+            return;
+        }
+        GameManager.GamePause();
+    }
+    public override void OnExit()
+    {
+        base.OnExit();
+    }
+    private void StartButtonOnClick()
+    {
+        PlayerPrefs.SetInt("isGameStarted", 1);
+        PlayerPrefs.Save();
+        base.OnExit();
+        GameManager.GameResume();
+        stateMachine.TransitionToNextState();
     }
 }
