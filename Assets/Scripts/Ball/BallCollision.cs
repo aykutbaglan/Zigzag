@@ -9,10 +9,12 @@ public class BallCollision : MonoBehaviour
         //{
         //    iInteractable.Interact();
         //}
-        if (other.CompareTag("Ball"))
+        if (other.CompareTag("Ground"))
         {
+            Debug.Log("Ball Collided With : " +other.gameObject.name);
             scoreText.score++;
             scoreText.UpdateScoreText();
+            
             //Destroy(other.gameObject);
 
             if (scoreText.score > scoreText.highScore)
@@ -20,6 +22,7 @@ public class BallCollision : MonoBehaviour
                 scoreText.highScore = scoreText.score;
                 PlayerPrefs.SetInt("HighScore", scoreText.highScore);
                 scoreText.UpdateHighScoreText();
+                Debug.Log("New High Score : " +  scoreText.highScore);
             }
         }
     }
