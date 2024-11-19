@@ -13,6 +13,7 @@ public class BallCollision : MonoBehaviour
         {
             Destroy(other.gameObject);
             scoreText.score += 30;
+            scoreText.UpdateScoreText();
         }
         if (other.CompareTag("Ground"))
         {
@@ -20,13 +21,13 @@ public class BallCollision : MonoBehaviour
             scoreText.score++;
             scoreText.UpdateScoreText();
             
-            if (scoreText.score > scoreText.highScore)
-            {
-                scoreText.highScore = scoreText.score;
-                PlayerPrefs.SetInt("HighScore", scoreText.highScore);
-                scoreText.UpdateHighScoreText();
-                Debug.Log("New High Score : " +  scoreText.highScore);
-            }
+            //if (scoreText.score > scoreText.highScore)
+            //{
+            //    scoreText.highScore = scoreText.score;
+            //    PlayerPrefs.SetInt("HighScore", scoreText.highScore);
+            //    scoreText.UpdateHighScoreText();
+            //    Debug.Log("New High Score : " +  scoreText.highScore);
+            //}
         }
     }
 }

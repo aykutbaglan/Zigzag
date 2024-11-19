@@ -28,6 +28,13 @@ public class GroundCollisionController : MonoBehaviour/*, IInteractable*/
             groundDataTransmitter.SetGroundRigidbodyValues();
            // scoreText.score++;
             scoreText.UpdateScore(1);
+            if (scoreText.score > scoreText.highScore)
+            {
+                scoreText.highScore = scoreText.score;
+                PlayerPrefs.SetInt("HighScsore",scoreText.highScore);
+                PlayerPrefs.Save();
+                scoreText.UpdateHighScoreText();
+            }
         } 
     }
 }
