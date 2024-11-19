@@ -12,6 +12,7 @@ public class GroundCollisionController : MonoBehaviour/*, IInteractable*/
     {
         scoreText = FindObjectOfType<ScoreText>();
     }
+
     public void Interact()
     {
 
@@ -19,6 +20,7 @@ public class GroundCollisionController : MonoBehaviour/*, IInteractable*/
         //scoreText.score++;
         //scoreText.UpdateScore(1);
     }
+
     private void OnCollisionExit(Collision other)
     {
         if (other.gameObject.CompareTag(BALL_TAG))
@@ -26,13 +28,6 @@ public class GroundCollisionController : MonoBehaviour/*, IInteractable*/
             groundDataTransmitter.SetGroundRigidbodyValues();
            // scoreText.score++;
             scoreText.UpdateScore(1);
-            if (scoreText.score > scoreText.highScore)
-            {
-                scoreText.highScore = scoreText.score;
-                PlayerPrefs.SetInt("HighScore",scoreText.highScore);
-                PlayerPrefs.Save();
-                scoreText.UpdateHighScoreText();
-            }
         } 
     }
 }

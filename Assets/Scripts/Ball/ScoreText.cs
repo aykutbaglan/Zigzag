@@ -14,6 +14,22 @@ public class ScoreText : MonoBehaviour
         highScore = PlayerPrefs.GetInt("HighScore", 0);
         UpdateHighScoreText();
     }
+    //void OnTriggerEnter(Collider other)
+    //{
+    //    if (other.CompareTag("Ball"))
+    //    {
+    //        score++;
+    //        UpdateScoreText();
+    //        //Destroy(other.gameObject);
+
+    //        if (score > highScore)
+    //        {
+    //            highScore = score;
+    //            PlayerPrefs.SetInt("HighScore", highScore);
+    //            UpdateHighScoreText();
+    //        }
+    //    }
+    //}
     public void UpdateScoreText()
     {
         scoreText.text = "Score: " + score;
@@ -22,6 +38,7 @@ public class ScoreText : MonoBehaviour
     {
         highScoreText.text = "HighScore:" + highScore;
     }
+
     internal void UpdateScore(int v)
     {
         score += v;
