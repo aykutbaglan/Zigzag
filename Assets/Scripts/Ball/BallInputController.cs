@@ -27,6 +27,7 @@ public class BallInputController : MonoBehaviour
         if (Input.GetMouseButtonDown(0))
         {
             ChangeBallDirection();
+            Debug.Log("týký");
         }
     }
     private void ChangeBallDirection()

@@ -18,9 +18,9 @@ public class BallCollision : MonoBehaviour
         if (other.CompareTag("Ground"))
         {
             Debug.Log("Ball Collided With : " +other.gameObject.name);
-            scoreText.score++;
-            scoreText.UpdateScoreText();
-            
+            //scoreText.score++;
+            //scoreText.UpdateScoreText();
+
             //if (scoreText.score > scoreText.highScore)
             //{
             //    scoreText.highScore = scoreText.score;

@@ -14,10 +14,14 @@ public class InGameState : State
     public override void OnEnter()
     {
         Debug.Log("On Enter In Game");
-            base.OnEnter();
+        base.OnEnter();
+        //StartCoroutine(StartGameAfterDelay());
         GameManager.GameResume();
-
         _moveController.ChangeGameStatus(true);
-
     }
+    //IEnumerator StartGameAfterDelay()
+    //{
+    //    yield return new WaitForSeconds(0.5f);
+    //    GameManager.GameResume();
+    //}
 }

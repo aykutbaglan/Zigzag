@@ -44,6 +44,5 @@ public class EndGameState : State
         PlayerPrefs.SetInt("isGameRestarted", 1);
         PlayerPrefs.Save();
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
-        GameManager.GameResume();
     }
 }

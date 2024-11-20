@@ -3,38 +3,45 @@ using UnityEngine;
 
 public class GroundCollisionController : MonoBehaviour/*, IInteractable*/
 {
+    public ScoreText scoreText;
     [SerializeField] private GroundDataTransmitter groundDataTransmitter;
-    public  ScoreText scoreText;
-
+    private bool hasBeenTouched = false;
     private const string BALL_TAG = "Ball";
 
     private void Start()
     {
         scoreText = FindObjectOfType<ScoreText>();
     }
-
-    public void Interact()
+    //public void Interact()
+    //{
+    //    //Debug.Log("ASDFLKHDSAJKLGDLHD");
+    //    //scoreText.score++;
+    //    //scoreText.UpdateScore(1);
+    //}
+    private void OnTriggerEnter(Collider other)
     {
-
-        //Debug.Log("ASDFLKHDSAJKLGDLHD");
-        //scoreText.score++;
-        //scoreText.UpdateScore(1);
-    }
-
-    private void OnCollisionExit(Collision other)
-    {
-        if (other.gameObject.CompareTag(BALL_TAG))
+        if (gameObject.CompareTag("MainGround"))
         {
-            groundDataTransmitter.SetGroundRigidbodyValues();
-           // scoreText.score++;
+            return;
+        }
+        if (other.gameObject.CompareTag(BALL_TAG) && !hasBeenTouched)
+        {
+            hasBeenTouched = true;
             scoreText.UpdateScore(1);
             if (scoreText.score > scoreText.highScore)
             {
                 scoreText.highScore = scoreText.score;
-                PlayerPrefs.SetInt("HighScsore",scoreText.highScore);
+                PlayerPrefs.SetInt("HighScore", scoreText.highScore);
                 PlayerPrefs.Save();
                 scoreText.UpdateHighScoreText();
             }
-        } 
+        }
+    }
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.gameObject.CompareTag(BALL_TAG))
+        {
+            groundDataTransmitter.SetGroundRigidbodyValues();
+        }
     }
 }

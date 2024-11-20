@@ -1,11 +1,12 @@
 using System;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class ScoreText : MonoBehaviour
 {
-    public Text scoreText;
-    public Text highScoreText;
+    public TMP_Text scoreText;
+    public TMP_Text highScoreText;
     public int score = 0;
     public int highScore;
 
@@ -14,22 +15,6 @@ public class ScoreText : MonoBehaviour
         highScore = PlayerPrefs.GetInt("HighScore", 0);
         UpdateHighScoreText();
     }
-    //void OnTriggerEnter(Collider other)
-    //{
-    //    if (other.CompareTag("Ball"))
-    //    {
-    //        score++;
-    //        UpdateScoreText();
-    //        //Destroy(other.gameObject);
-
-    //        if (score > highScore)
-    //        {
-    //            highScore = score;
-    //            PlayerPrefs.SetInt("HighScore", highScore);
-    //            UpdateHighScoreText();
-    //        }
-    //    }
-    //}
     public void UpdateScoreText()
     {
         scoreText.text = "Score: " + score;

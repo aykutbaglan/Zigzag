@@ -28,7 +28,7 @@ public class StateMachine : MonoBehaviour
         }
         currentState = newState;
         currentState.OnEnter();
-        Debug.Log(currentState.name);
+        Debug.Log("Change State name -> " + currentState.name);
     }
     public void TransitionToNextState()
     {
