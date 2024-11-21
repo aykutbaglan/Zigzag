@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class GroundCollisionController : MonoBehaviour/*, IInteractable*/
 {
-    public ScoreText scoreText;
+    private ScoreText scoreText;
     [SerializeField] private GroundDataTransmitter groundDataTransmitter;
     private bool hasBeenTouched = false;
     private const string BALL_TAG = "Ball";
