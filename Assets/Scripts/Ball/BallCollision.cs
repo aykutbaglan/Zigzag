@@ -1,8 +1,10 @@
 using UnityEngine;
+using DG.Tweening;
 
 public class BallCollision : MonoBehaviour
 {
     [SerializeField] private ScoreText scoreText;
+    private Tween crystalTextTween;
     void OnTriggerEnter(Collider other)
     {
         //if (other.TryGetComponent<IInteractable>(out var iInteractable))
@@ -14,6 +16,9 @@ public class BallCollision : MonoBehaviour
             Destroy(other.gameObject);
             scoreText.score += 30;
             scoreText.UpdateScoreText();
+            scoreText.crystalScore = 30;
+            scoreText.CrystalScore();
+            scoreText.CrystalTween();
         }
         if (other.CompareTag("Ground"))
         {
