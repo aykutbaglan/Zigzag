@@ -10,6 +10,7 @@ public class GroundSpawnController : MonoBehaviour
     private Vector3 lastCrystalPosition = Vector3.positiveInfinity;
     private float minCrystalDistance = 4f;
 
+    [SerializeField] public bool isHackActive = false;
     void Start()
     {
         GenerateRandomNewGrounds();
@@ -23,18 +24,21 @@ public class GroundSpawnController : MonoBehaviour
     }
     private void CreateNewGround()
     {
-        if (Random.Range(0, 2) == 0) // buradan 0 veya 1 deðeri döner 0 olursa zemin sola yerleþtirilir 1 olursa zemin ileri yerleþtirilir.
+        Vector3 spawnPos = lastGroundObject.transform.position;
+        if (Random.Range(0, 2) == 0 || isHackActive) // buradan 0 veya 1 deðeri döner 0 olursa zemin sola yerleþtirilir 1 olursa zemin ileri yerleþtirilir.
         {
-            newGroundObject = Instantiate(groundPrefab, new Vector3(lastGroundObject.transform.position.x - 1f, lastGroundObject.transform.position.y, lastGroundObject.transform.position.z), Quaternion.identity);
-            lastGroundObject = newGroundObject;
-            TryPlaceCrystal(newGroundObject);
+            spawnPos += new Vector3(-1, 0, 0);
         }
         else
         {
-            newGroundObject = Instantiate(groundPrefab, new Vector3(lastGroundObject.transform.position.x, lastGroundObject.transform.position.y, lastGroundObject.transform.position.z +1f), Quaternion.identity);
-            lastGroundObject = newGroundObject;
+            spawnPos += new Vector3(0, 0, 1);
         }
+        newGroundObject = Instantiate(groundPrefab, spawnPos, Quaternion.identity);
+        lastGroundObject = newGroundObject;
+        TryPlaceCrystal(newGroundObject);
     }
+
+
     private void TryPlaceCrystal(GameObject groundObject)
     {
         if (Random.Range(0, 14) == 0) //Burada %14 Ýhtimalle kristal oluþturuyorum.

@@ -519,6 +519,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 805b9df742940494497386715b574dda, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  scoreText: {fileID: 0}
   groundDataTransmitter: {fileID: 106961695}
 --- !u!114 &106961694
 MonoBehaviour:
@@ -896,7 +897,7 @@ MonoBehaviour:
   colors:
   - {r: 1, g: 0, b: 0, a: 0}
   - {r: 0, g: 1, b: 0.18335032, a: 0}
-  - {r: 1, g: 0.7325124, b: 0, a: 0}
+  - {r: 0.9218813, g: 1, b: 0, a: 0}
   - {r: 0.91813564, g: 0, b: 1, a: 0}
   - {r: 0, g: 0, b: 0, a: 0}
   lerpValue: 0.75
@@ -1673,6 +1674,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -5830119281877339400, guid: bb20fca9bcff0834aae2734d03ef7053, type: 3}
+      propertyPath: rb
+      value: 
+      objectReference: {fileID: 1440504764}
+    - target: {fileID: -5830119281877339400, guid: bb20fca9bcff0834aae2734d03ef7053, type: 3}
+      propertyPath: groundSpawnController
+      value: 
+      objectReference: {fileID: 1757015772}
     - target: {fileID: 5678294678372420473, guid: bb20fca9bcff0834aae2734d03ef7053, type: 3}
       propertyPath: m_RootOrder
       value: 6
@@ -1744,12 +1753,17 @@ PrefabInstance:
     - target: {fileID: 8324848320779486368, guid: bb20fca9bcff0834aae2734d03ef7053, type: 3}
       propertyPath: scoreText
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 87052143}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bb20fca9bcff0834aae2734d03ef7053, type: 3}
 --- !u!1 &1440504758 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5678294678372420477, guid: bb20fca9bcff0834aae2734d03ef7053, type: 3}
+  m_PrefabInstance: {fileID: 1440504757}
+  m_PrefabAsset: {fileID: 0}
+--- !u!54 &1440504764 stripped
+Rigidbody:
+  m_CorrespondingSourceObject: {fileID: 5678294678372420472, guid: bb20fca9bcff0834aae2734d03ef7053, type: 3}
   m_PrefabInstance: {fileID: 1440504757}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &1521500770
@@ -1911,8 +1925,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lastGroundObject: {fileID: 1440504758}
-  groundPrefab: {fileID: 5678294678372420477, guid: bb20fca9bcff0834aae2734d03ef7053, type: 3}
+  groundPrefab: {fileID: 1440504758}
   crystalPrefab: {fileID: 1000012006197310, guid: 465c505844950da499dcf096a6da4409, type: 3}
+  isHackActive: 0
 --- !u!4 &1757015773
 Transform:
   m_ObjectHideFlags: 0
@@ -2751,6 +2766,14 @@ PrefabInstance:
     - target: {fileID: 4980575857969198655, guid: bd60cb57a36d0de4993ac9d5ae030e65, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4980575857969198785, guid: bd60cb57a36d0de4993ac9d5ae030e65, type: 3}
+      propertyPath: maxSpeed
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 4980575857969198785, guid: bd60cb57a36d0de4993ac9d5ae030e65, type: 3}
+      propertyPath: speedIncreaseRate
+      value: 0.09
       objectReference: {fileID: 0}
     - target: {fileID: 4980575857969198786, guid: bd60cb57a36d0de4993ac9d5ae030e65, type: 3}
       propertyPath: scoreText

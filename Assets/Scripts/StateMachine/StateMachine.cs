@@ -4,12 +4,11 @@ public class StateMachine : MonoBehaviour
 {
     public State currentState;
     [SerializeField] private State[] states;
-    private int stateNum;
+    private int _stateNum;
 
     private void Start()
     {
-
-        Debug.Log(PlayerPrefs.GetInt("isGameRestarted") + "aaaaaaaaaaaaaa");
+        //Debug.Log(PlayerPrefs.GetInt("isGameRestarted") + "aaaaaaaaaaaaaa");
         if (PlayerPrefs.GetInt("isGameRestarted") == 0)
         {
             TransitionToNextState();
@@ -28,20 +27,20 @@ public class StateMachine : MonoBehaviour
         }
         currentState = newState;
         currentState.OnEnter();
-        Debug.Log("Change State name -> " + currentState.name);
+        //Debug.Log("Change State name -> " + currentState.name);
     }
     public void TransitionToNextState()
     {
-        if (stateNum < states.Length)
+        if (_stateNum < states.Length)
         {
-            ChangeState(states[stateNum]);
-            stateNum++;
+            ChangeState(states[_stateNum]);
+            _stateNum++;
         }
     }
     public void TransitionToSpesificState(int stateid)
     {
         ChangeState(states[stateid]);
-        stateNum = stateid + 1;
+        _stateNum = stateid + 1;
     }
     public void CloseAllState()
     {

@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class GroundCollisionController : MonoBehaviour/*, IInteractable*/
 {
-    private ScoreText scoreText;
+    [SerializeField] private ScoreText scoreText;
     [SerializeField] private GroundDataTransmitter groundDataTransmitter;
     private bool hasBeenTouched = false;
     private const string BALL_TAG = "Ball";
@@ -37,11 +37,13 @@ public class GroundCollisionController : MonoBehaviour/*, IInteractable*/
             }
         }
     }
+
     private void OnTriggerExit(Collider other)
     {
         if (other.gameObject.CompareTag(BALL_TAG))
         {
             groundDataTransmitter.SetGroundRigidbodyValues();
+            hasBeenTouched = false;
         }
     }
 }

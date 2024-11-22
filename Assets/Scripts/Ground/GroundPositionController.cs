@@ -3,15 +3,10 @@ using UnityEngine;
 public class GroundPositionController : MonoBehaviour
 {
     [SerializeField] private float endYValue;
-    private GroundSpawnController groundSpawnController;
-    private Rigidbody rb;
+    [SerializeField] private GroundSpawnController groundSpawnController;
+    [SerializeField] private Rigidbody rb;
     private int groundDirection;
 
-    void Start()
-    {
-        groundSpawnController = FindObjectOfType<GroundSpawnController>();
-        rb = GetComponent<Rigidbody>();
-    }
     void Update()
     {
         CheckGroundVerticalPosition();
@@ -29,7 +24,7 @@ public class GroundPositionController : MonoBehaviour
     {
         groundDirection = Random.Range(0, 2);
 
-        if (groundDirection == 0)
+        if (groundDirection == 0 || groundSpawnController.isHackActive)
         {
             transform.position = new Vector3(groundSpawnController.lastGroundObject.transform.position.x - 1f, groundSpawnController.lastGroundObject.transform.position.y, groundSpawnController.lastGroundObject.transform.position.z);
         }

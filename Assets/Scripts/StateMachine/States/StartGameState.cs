@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -36,15 +34,15 @@ public class StartGameState : State
     {
         PlayerPrefs.SetInt("isGameStarted", 1);
         PlayerPrefs.Save();
-        StartCoroutine(StartGameAfterDelay());
+        //StartCoroutine(StartGameAfterDelay());
         base.OnExit();
         //GameManager.GameResume();
-        //stateMachine.TransitionToNextState();
-    }
-    IEnumerator StartGameAfterDelay()
-    {
-        yield return new WaitForSeconds(1f);
-        GameManager.GameResume();
         stateMachine.TransitionToNextState();
     }
+    //IEnumerator StartGameAfterDelay()
+    //{
+    //    yield return new WaitForSeconds(1f);
+    //    GameManager.GameResume();
+    //    stateMachine.TransitionToNextState();
+    //}
 }
