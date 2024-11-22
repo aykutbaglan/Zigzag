@@ -11,7 +11,6 @@ public class GroundPositionController : MonoBehaviour
     {
         CheckGroundVerticalPosition();
     }
-
     private void CheckGroundVerticalPosition()
     {
         if (transform.position.y <= endYValue)

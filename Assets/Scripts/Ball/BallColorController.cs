@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class BallColorController : MonoBehaviour
@@ -40,5 +38,4 @@ public class BallColorController : MonoBehaviour
     {
         ballMaterial.color = Color.Lerp(ballMaterial.color, colors[colorIndex], lerpValue * Time.deltaTime);
     }
-
 }

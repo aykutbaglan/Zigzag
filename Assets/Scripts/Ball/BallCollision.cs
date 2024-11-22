@@ -7,10 +7,6 @@ public class BallCollision : MonoBehaviour
     private Tween crystalTextTween;
     void OnTriggerEnter(Collider other)
     {
-        //if (other.TryGetComponent<IInteractable>(out var iInteractable))
-        //{
-        //    iInteractable.Interact();
-        //}
         if (other.CompareTag("Crystal"))
         {
             Destroy(other.gameObject);
@@ -22,7 +18,7 @@ public class BallCollision : MonoBehaviour
         }
         if (other.CompareTag("Ground"))
         {
-            Debug.Log("Ball Collided With : " +other.gameObject.name);
+            //Debug.Log("Ball Collided With : " +other.gameObject.name);
             //scoreText.score++;
             //scoreText.UpdateScoreText();
 

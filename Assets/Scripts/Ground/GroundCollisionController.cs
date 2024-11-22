@@ -1,4 +1,3 @@
-using Unity.VisualScripting;
 using UnityEngine;
 
 public class GroundCollisionController : MonoBehaviour/*, IInteractable*/
@@ -12,12 +11,6 @@ public class GroundCollisionController : MonoBehaviour/*, IInteractable*/
     {
         scoreText = FindObjectOfType<ScoreText>();
     }
-    //public void Interact()
-    //{
-    //    //Debug.Log("ASDFLKHDSAJKLGDLHD");
-    //    //scoreText.score++;
-    //    //scoreText.UpdateScore(1);
-    //}
     private void OnTriggerEnter(Collider other)
     {
         if (gameObject.CompareTag("MainGround"))
@@ -37,7 +30,6 @@ public class GroundCollisionController : MonoBehaviour/*, IInteractable*/
             }
         }
     }
-
     private void OnTriggerExit(Collider other)
     {
         if (other.gameObject.CompareTag(BALL_TAG))

@@ -5,7 +5,7 @@ public class StartGameState : State
 {
     [SerializeField] private Button startButton;
     [SerializeField] private StateMachine stateMachine;
-    private const int IN_GAME_STATE_INDEX = 1;
+    //private const int IN_GAME_STATE_INDEX = 1;
 
     private void OnEnable()
     {
