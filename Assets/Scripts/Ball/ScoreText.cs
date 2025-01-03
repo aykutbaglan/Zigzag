@@ -28,7 +28,7 @@ public class ScoreText : MonoBehaviour
     }
     public void UpdateHighScoreText()
     {
-        highScoreText.text = "HighScore:" + highScore;
+        highScoreText.text = "High Score: " + highScore;
     }
     internal void UpdateScore(int v)
     {

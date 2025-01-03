@@ -725,7 +725,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 331, y: -106.049194}
+  m_AnchoredPosition: {x: 331, y: -134.3}
   m_SizeDelta: {x: 587.15, y: 71.1219}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &368737643
@@ -748,7 +748,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Score : 0'
+  m_text: 'Score: 0'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -913,6 +913,7 @@ GameObject:
   - component: {fileID: 410188345}
   - component: {fileID: 410188344}
   - component: {fileID: 410188346}
+  - component: {fileID: 410188347}
   m_Layer: 0
   m_Name: Color Manager
   m_TagString: Untagged
@@ -976,7 +977,28 @@ MonoBehaviour:
   - {r: 0, g: 1, b: 0.18335032, a: 0}
   - {r: 0.9218813, g: 1, b: 0, a: 0}
   - {r: 0.91813564, g: 0, b: 1, a: 0}
-  - {r: 0, g: 0, b: 0, a: 0}
+  - {r: 0, g: 0.5921569, b: 1, a: 0}
+  lerpValue: 0.75
+  time: 5
+--- !u!114 &410188347
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 410188343}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 614abfe7037b1014b9bbff49daf0fb3b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  headerText: {fileID: 1948885318}
+  colors:
+  - {r: 1, g: 0, b: 0, a: 0}
+  - {r: 0, g: 1, b: 0.18431373, a: 0}
+  - {r: 0.92156863, g: 1, b: 0, a: 0}
+  - {r: 0.91764706, g: 0, b: 1, a: 0}
+  - {r: 0, g: 0.5893979, b: 1, a: 0}
   lerpValue: 0.75
   time: 5
 --- !u!1 &411376914
@@ -1259,7 +1281,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 331, y: -35.244}
+  m_AnchoredPosition: {x: 331, y: -63.494873}
   m_SizeDelta: {x: 587.1588, y: 70.488}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &832778176
@@ -2736,10 +2758,12 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Welcome To The Game
+  m_text: 'Zag
+
+    Zig'
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 44ae4257189cb4f4bab4f3cb787c461d, type: 2}
+  m_sharedMaterial: {fileID: -3073771634100495503, guid: 44ae4257189cb4f4bab4f3cb787c461d, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -2763,8 +2787,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 80
-  m_fontSizeBase: 80
+  m_fontSize: 170
+  m_fontSizeBase: 170
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -2777,7 +2801,7 @@ MonoBehaviour:
   m_wordSpacing: 0
   m_lineSpacing: 0
   m_lineSpacingMax: 0
-  m_paragraphSpacing: 0
+  m_paragraphSpacing: -50
   m_charWidthMaxAdj: 0
   m_enableWordWrapping: 1
   m_wordWrappingRatios: 0.4
