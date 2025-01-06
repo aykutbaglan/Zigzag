@@ -72,7 +72,7 @@ This project is a ZigZag Game Clone developed using Unity. The main goal of the 
 &nbsp;&nbsp;&nbsp; 3.Speed Increase: The ball’s speed increases over time with a multiplier.
 
 ## Installation
-To run the Cube Runner game on your Windows system, follow these steps:
+To run the ZagZig game on your Windows system, follow these steps:
 
 &nbsp;&nbsp;&nbsp; 1. Clone this repository or download it as a ZIP file.  
 &nbsp;&nbsp;&nbsp; 2. Open the project in Visual Studio or your preferred C++ IDE.  
