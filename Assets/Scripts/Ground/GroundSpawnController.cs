@@ -17,7 +17,7 @@ public class GroundSpawnController : MonoBehaviour
     }
     public void GenerateRandomNewGrounds()
     {
-        for (int i = 0; i < 75; i++)
+        for (int i = 0; i < 95; i++)
         {
             CreateNewGround();
         }
@@ -34,6 +34,9 @@ public class GroundSpawnController : MonoBehaviour
             spawnPos += new Vector3(0, 0, 1);
         }
         newGroundObject = Instantiate(groundPrefab, spawnPos, Quaternion.identity);
+
+        newGroundObject.transform.SetParent(this.transform); 
+
         lastGroundObject = newGroundObject;
         TryPlaceCrystal(newGroundObject);
     }
@@ -47,6 +50,9 @@ public class GroundSpawnController : MonoBehaviour
         if (Vector3.Distance(crystalPosition,lastCrystalPosition) >= minCrystalDistance)
         {
             GameObject newCrystal = Instantiate(crystalPrefab, crystalPosition, Quaternion.identity);
+
+                newCrystal.transform.SetParent(this.transform);
+
             lastCrystalPosition = crystalPosition;
         }
         }
