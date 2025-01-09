@@ -42,7 +42,7 @@ public class GroundSpawnController : MonoBehaviour
     }
 
 
-    private void TryPlaceCrystal(GameObject groundObject)
+    public void TryPlaceCrystal(GameObject groundObject)
     {
         if (Random.Range(0, 14) == 0) //Burada %14 Ýhtimalle kristal oluþturuyorum.
         {

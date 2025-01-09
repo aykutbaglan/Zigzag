@@ -32,6 +32,8 @@ public class GroundPositionController : MonoBehaviour
             transform.position = new Vector3(groundSpawnController.lastGroundObject.transform.position.x, groundSpawnController.lastGroundObject.transform.position.y, groundSpawnController.lastGroundObject.transform.position.z + 1f);
         }
         groundSpawnController.lastGroundObject = gameObject;
+        groundSpawnController.TryPlaceCrystal(gameObject);
+
     }
     private void SetRigidBodyValues()
     {
