@@ -72,11 +72,8 @@ This project is a ZigZag Game Clone developed using Unity. The main goal of the 
 &nbsp;&nbsp;&nbsp; 3.Speed Increase: The ball’s speed increases over time with a multiplier.
 
 ## Installation
-To run the ZagZig game on your Windows system, follow these steps:
 
-&nbsp;&nbsp;&nbsp; 1. Clone this repository or download it as a ZIP file.  
-&nbsp;&nbsp;&nbsp; 2. Open the project in Visual Studio or your preferred C++ IDE.  
-&nbsp;&nbsp;&nbsp; 3. Build and run the project.    
+It is a project made with the 2021.3.17f1 version of unity, you can directly clone the repo and open it with unity. 
 
 ### Downloading Release and Playing
 
@@ -84,7 +81,7 @@ You can easily download and play the game by following these steps:
 
 &nbsp;&nbsp;&nbsp; 1. Go to the [Releases](https://github.com/aykutbaglan/ZigZag/releases) section of this repository.  
 &nbsp;&nbsp;&nbsp; 2. Find the latest release and click on it.  
-&nbsp;&nbsp;&nbsp; 3. Download the ` v0.0.1.zip ` file from the release.  
+&nbsp;&nbsp;&nbsp; 3. Download the ` latest version` file from the release.  
 &nbsp;&nbsp;&nbsp; 4. Unzip the zip file.    
 &nbsp;&nbsp;&nbsp; 5. Run`ZigZag.exe`to start playing the game !  
 
